@@ -1,2 +1,2 @@
-# JimuLab
-JimuLab框架
+# GimuLab
+GimuLab框架
