@@ -12,8 +12,6 @@ public:
     ~Sandbox() override = default;
 };
 
-int main() {
-    Sandbox* sandbox = new Sandbox();
-    sandbox->Run();
-    return 0;
+Gimu::Application* Gimu::CreateApplication() {
+    return new Sandbox();
 }

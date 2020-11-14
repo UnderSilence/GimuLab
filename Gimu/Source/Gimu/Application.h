@@ -17,6 +17,9 @@ namespace Gimu {
 
         void Run();
     };
+
+    // To be defined in CLIENT
+    Application* CreateApplication();
 }
 
 #endif //GIMUDEV_APPLICATION_H
