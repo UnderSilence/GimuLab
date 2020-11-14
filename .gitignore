@@ -34,6 +34,8 @@
 # Clion IDEA files
 .idea/
 cmake-build-debug/
+cmake-build-release/
+cmake-build-relwithdebinfo/
 
 #Project outputs
 bin/

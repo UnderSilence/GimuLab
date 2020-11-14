@@ -1,5 +1,8 @@
 
 
+project(Gimu)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/Binaries")
-add_library(GimuEngine SHARED Sources/Test.cpp Sources/Test.h)
+aux_source_directory(Source/Gimu GIMU_SRCS)
+add_definitions(-DGIMU_BUILD_DLL)
+add_library(Gimu SHARED ${GIMU_SRCS} Source/Test.cpp Source/Test.h Source/Gimu.h)
+target_include_directories (Gimu PUBLIC include)
