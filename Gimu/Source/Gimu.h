@@ -9,10 +9,10 @@
 
 // #include <cstdio>
 #include "Gimu/Application.h"
+#include "Gimu/Log.h"
 
 // Begin Entry Point
-
 #include "Gimu/EntryPoint.h"
-
 // End Entry Point
+
 #endif //GIMUDEV_GIMU_H

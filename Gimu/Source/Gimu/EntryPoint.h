@@ -10,7 +10,12 @@
 // extern Gimu::Application* Gimu::CreateApplication();
 int main(int argc, char** argv) {
 
-    // printf("GIMUEngin Start");
+    Gimu::Log::Init();
+    GM_CORE_WARN("Log Initialized!");
+
+    int Var = 998244353;
+    GM_INFO("Hello Apps! Var={}, Str={}", Var, "Hello strings");
+
     auto app = Gimu::CreateApplication();
     app->Run();
     delete app;

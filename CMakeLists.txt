@@ -13,7 +13,15 @@ endif()
 
 set(ENGINE_API_INCLUDES "Gimu/Source")
 
-include_directories(${ENGINE_API_INCLUDES})
+set(THIRDPARTY_API_PREFIX "Gimu/ThirdParty")
+set(LOG_API_INCLUDES ${THIRDPARTY_API_PREFIX}/spdlog/include)
+
+set(THIRDPARTY_API_INCLUDES "")
+string(APPEND THIRDPARTY_API_INCLUDES ${LOG_API_INCLUDES})
+
+message(STATUS "ThirdParty includes directory: ${THIRDPARTY_API_INCLUDES}")
+
+include_directories(${ENGINE_API_INCLUDES} ${THIRDPARTY_API_INCLUDES})
 set(LIBRARY_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/Binaries")
 set(EXECUTABLE_OUTPUT_PATH "${CMAKE_SOURCE_DIR}/Binaries")
 

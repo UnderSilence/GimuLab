@@ -1,4 +1,4 @@
-
+cmake_minimum_required(VERSION 3.17)
 # set(TARGET_BINARIES_DIR "${CMAKE_SOURCE_DIR}/Binaries")
 # set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${TARGET_BINARIES_DIR}")
 project(Sandbox)
