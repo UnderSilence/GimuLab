@@ -33,10 +33,12 @@
 
 # Clion IDEA files
 .idea/
-cmake-build-debug/
-cmake-build-release/
-cmake-build-relwithdebinfo/
+cmake-*/
 
-#Project outputs
+# Project outputs
 bin/
 Binaries/
+build/
+
+# VSCODE
+.vscode/

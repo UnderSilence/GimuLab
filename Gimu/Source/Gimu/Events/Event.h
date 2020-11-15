@@ -6,9 +6,8 @@
 #ifndef GIMUDEV_EVENT_H
 #define GIMUDEV_EVENT_H
 
+#include "gmpch.h"
 #include "Gimu/Core.h"
-#include <string>
-#include <sstream>
 
 namespace Gimu {
 

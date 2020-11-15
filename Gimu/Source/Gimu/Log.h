@@ -5,16 +5,13 @@
 #ifndef GIMUDEV_LOG_H
 #define GIMUDEV_LOG_H
 
-#include <memory>
-
+#include "gmpch.h"
 #include "Core.h"
-#include "spdlog/spdlog.h"
 
 namespace Gimu {
     class GIMU_API Log {
     public:
         static void Init();
-
         Log();
         virtual ~Log();
 

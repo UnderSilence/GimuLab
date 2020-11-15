@@ -12,5 +12,5 @@ set(ENGINE_API_INCLUDES "Source")
 include_directories(${ENGINE_API_INCLUDES})
 
 add_definitions(-DGIMU_BUILD_DLL)
-add_library(Gimu SHARED ${GIMU_SRCS} ${GIMU_EVENTS_SRCS} Source/Gimu.h Source/Gimu/Events/AppEvent.h Source/Gimu/Events/Event.h Source/Gimu/Events/KeyEvent.h Source/Gimu/Events/MouseEvent.h Source/Gimu/Base.h)
-target_include_directories (Gimu PUBLIC include)
+add_library(Gimu SHARED ${GIMU_SRCS} ${GIMU_EVENTS_SRCS})
+target_precompile_headers(Gimu PUBLIC Source/gmpch.h)

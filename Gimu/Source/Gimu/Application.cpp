@@ -20,7 +20,8 @@ namespace Gimu {
         if(e.IsInCategory(EventCategoryApplication)) {
             GM_INFO(e.ToString());
         }
-
+       // GM_TRACE(e.ToString());
+       // GM_WARN(e.ToString());
         while (true) {}
     }
 
