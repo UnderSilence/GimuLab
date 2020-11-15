@@ -12,9 +12,7 @@ namespace Gimu {
     class GIMU_API Application {
     public:
         Application();
-
         virtual ~Application();
-
         void Run();
     };
 

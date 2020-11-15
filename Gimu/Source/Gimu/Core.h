@@ -15,4 +15,6 @@
     #error Hazel only support Windows currently!
 #endif
 
+#include "Base.h"
+
 #endif //GIMUDEV_CORE_H

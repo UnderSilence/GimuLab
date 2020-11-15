@@ -18,7 +18,7 @@ namespace Gimu {
     }
 
     void Log::Init() {
-        // spdlog::set_pattern("%^[%T] %n: %v%$"); just use default
+        // spdlog::set_pattern("%^[%T] %n: %v%$"); // just use default
         s_CoreLogger = spdlog::stdout_color_mt("GIMU");
         s_CoreLogger->set_level(spdlog::level::level_enum::trace);
 
