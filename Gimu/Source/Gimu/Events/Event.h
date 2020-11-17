@@ -22,11 +22,11 @@ namespace Gimu {
 
     enum EventCategory {
         None = 0,
-        EventCategoryApplication = BIT(0),
-        EventCategoryInput = BIT(1),
-        EventCategoryKeyboard = BIT(2),
-        EventCategoryMouse = BIT(3),
-        EventCategoryMouseButton = BIT(4)
+        EventCategoryApplication = BIT(0U),
+        EventCategoryInput = BIT(1U),
+        EventCategoryKeyboard = BIT(2U),
+        EventCategoryMouse = BIT(3U),
+        EventCategoryMouseButton = BIT(4U)
     };
 
 #define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::type; }\

@@ -6,6 +6,7 @@
 #define GIMU_BASE_H
 
 #define BIT(x) (1U<<x)
+#define GM_BIND_EVENT_FN(fn) [this](auto&&... args) -> decltype(auto) { return this->fn(std::forward<decltype(args)>(args)...); }
 
 #include "Gimu/Core/PlatformDetection.h"
 

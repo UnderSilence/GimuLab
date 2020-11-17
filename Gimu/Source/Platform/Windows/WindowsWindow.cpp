@@ -2,10 +2,13 @@
 // Created by Metal on 2020/11/17.
 //
 
-#include "WindowsWindow.h"
+#include "Platform/Windows/WindowsWindow.h"
+#include "Gimu/Events/AppEvent.h"
+#include "Gimu/Events/KeyEvent.h"
+#include "Gimu/Events/MouseEvent.h"
+
 
 namespace Gimu {
-
 
     /* GLFW Data part */
     static uint8_t s_GLFWWindowCount = 0;
@@ -28,10 +31,81 @@ namespace Gimu {
         }
 
         m_Window = glfwCreateWindow((int) props.Width, (int) props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-        ++s_GLFWWindowCount;
-
+        glfwMakeContextCurrent(m_Window);
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
+        ++s_GLFWWindowCount;
+
+        // Set GLFW Callbacks
+        glfwSetWindowSizeCallback(m_Window, [](GLFWwindow *window, int width, int height) {
+            auto data = static_cast<WindowData *>(glfwGetWindowUserPointer(window));
+            WindowResizeEvent e(width, height);
+            data->EventCallback(e);
+            data->Width = width;
+            data->Height = height;
+        });
+
+        glfwSetWindowCloseCallback(m_Window, [](GLFWwindow *window) {
+            auto data = static_cast<WindowData *>(glfwGetWindowUserPointer(window));
+            WindowCloseEvent e{};
+            data->EventCallback(e);
+        });
+
+        glfwSetKeyCallback(m_Window, [](GLFWwindow *window, int key, int scancode, int action, int mods) {
+            auto data = static_cast<WindowData *>(glfwGetWindowUserPointer(window));
+
+            switch (action) {
+                case GLFW_PRESS: {
+                    KeyPressedEvent e(key, 0);
+                    data->EventCallback(e);
+                    break;
+                }
+                case GLFW_REPEAT: {
+                    KeyPressedEvent e(key, 1);
+                    data->EventCallback(e);
+                    break;
+                }
+                case GLFW_RELEASE: {
+                    KeyReleasedEvent e(key);
+                    data->EventCallback(e);
+                    break;
+                }
+                default: {
+                    GM_CORE_ERROR("Unknown Keyboard Action");
+                }
+            }
+        });
+
+        glfwSetMouseButtonCallback(m_Window, [](GLFWwindow *window, int button, int action, int mods) {
+            auto data = static_cast<WindowData *>(glfwGetWindowUserPointer(window));
+            switch (action) {
+                case GLFW_PRESS: {
+                    MouseButtonPressedEvent e(button);
+                    data->EventCallback(e);
+                    break;
+                }
+                case GLFW_RELEASE: {
+                    MouseButtonReleasedEvent e(button);
+                    data->EventCallback(e);
+                    break;
+                }
+                default: {
+                    GM_CORE_ERROR("Unknown Keyboard Action");
+                }
+            }
+        });
+
+        glfwSetScrollCallback(m_Window, [](GLFWwindow *window, double xOffset, double yOffset) {
+            auto data = static_cast<WindowData *>(glfwGetWindowUserPointer(window));
+            MouseScrolledEvent e((float)xOffset, (float)yOffset);
+            data->EventCallback(e);
+        });
+
+        glfwSetCursorPosCallback(m_Window, [](GLFWwindow* window, double xPos, double yPos) {
+            auto data = static_cast<WindowData *>(glfwGetWindowUserPointer(window));
+            MouseMovedEvent e((float)xPos,(float)yPos);
+            data->EventCallback(e);
+        });
     }
 
     void WindowsWindow::Shutdown() {
