@@ -5,8 +5,11 @@
 #ifndef GIMUDEV_LOG_H
 #define GIMUDEV_LOG_H
 
-#include "gmpch.h"
-#include "Core.h"
+#include "Gimu/Core/Base.h"
+// Add ThirdParty
+#include "spdlog/spdlog.h"
+#include "spdlog/sinks/stdout_color_sinks.h"
+#include "spdlog/fmt/ostr.h"
 
 namespace Gimu {
     class GIMU_API Log {

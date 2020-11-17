@@ -7,7 +7,7 @@
 #define GIMUDEV_EVENT_H
 
 #include "gmpch.h"
-#include "Gimu/Core.h"
+#include "Gimu/Core/Base.h"
 
 namespace Gimu {
 

@@ -19,10 +19,7 @@
 #include <map>
 #include <set>
 
-// Add ThirdParty
-#include "spdlog/spdlog.h"
-#include "spdlog/sinks/stdout_color_sinks.h"
-#include "spdlog/fmt/ostr.h"
+#include "Gimu/Core/Log.h"
 
 #ifdef GIMU_PLATFORM_WINDOWS
     #include <windows.h>

@@ -2,7 +2,8 @@
 // Created by Metal on 2020/11/15.
 //
 
-#include "Log.h"
+#include "Gimu/Core/Log.h"
+
 namespace Gimu {
 
     std::shared_ptr<spdlog::logger> Log::s_CoreLogger;

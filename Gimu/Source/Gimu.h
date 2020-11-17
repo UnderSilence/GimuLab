@@ -7,12 +7,10 @@
 
 // For applications' usage
 
-// #include <cstdio>
-#include "Gimu/Application.h"
-#include "Gimu/Log.h"
+#include "Gimu/Core/Base.h"
 
 // Begin Entry Point
-#include "Gimu/EntryPoint.h"
+#include "Gimu/Core/EntryPoint.h"
 // End Entry Point
 
 #endif //GIMUDEV_GIMU_H

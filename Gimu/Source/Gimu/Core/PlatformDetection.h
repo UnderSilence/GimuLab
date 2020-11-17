@@ -1,20 +1,18 @@
 //
-// Created by Metal on 2020/11/14.
+// Created by Metal on 2020/11/17.
 //
 
-#ifndef GIMUDEV_CORE_H
-#define GIMUDEV_CORE_H
+#ifndef GIMUDEV_PLATFORMDETECTION_H
+#define GIMUDEV_PLATFORMDETECTION_H
 
 #ifdef GIMU_PLATFORM_WINDOWS
     #ifdef GIMU_BUILD_DLL
         #define GIMU_API __declspec(dllexport)
     #else
         #define GIMU_API __declspec(dllimport)
-    #endif
+#endif
 #else
     #error Hazel only support Windows currently!
 #endif
 
-#include "Base.h"
-
-#endif //GIMUDEV_CORE_H
+#endif //GIMUDEV_PLATFORMDETECTION_H
