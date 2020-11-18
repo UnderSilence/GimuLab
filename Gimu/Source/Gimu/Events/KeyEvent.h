@@ -6,12 +6,11 @@
 #ifndef GIMU_KEYEVENT_H
 #define GIMU_KEYEVENT_H
 
+#include "Gimu/Core/KeyCodes.h"
 #include "Gimu/Events/Event.h"
 
 namespace Gimu {
     /*Copy from Hazel Engine*/
-
-    typedef int KeyCode;
 
     class KeyEvent : public Event {
     public:

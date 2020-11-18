@@ -16,6 +16,7 @@ namespace Gimu {
     void LayerList::AppendLayer(Layer *layer) {
         m_Layers.emplace(m_Layers.begin() + m_LayerInsertIndex, layer);
         m_LayerInsertIndex++;
+        layer->OnAttach();
     }
 
     void LayerList::RemoveLayer(Layer *layer) {
@@ -31,6 +32,7 @@ namespace Gimu {
 
     void LayerList::AppendOverlay(Layer *overlay) {
         m_Layers.emplace_back(overlay);
+        overlay->OnAttach();
     }
 
     void LayerList::RemoveOverlay(Layer *overlay) {

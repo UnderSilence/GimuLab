@@ -46,6 +46,7 @@ namespace Gimu {
         // GM_WARN(e.ToString());
 
         while (m_Running) {
+            /* Window screen test */
             glClearColor(1, 0, 1, 1);
             glClear(GL_COLOR_BUFFER_BIT);
 

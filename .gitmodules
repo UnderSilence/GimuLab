@@ -4,3 +4,6 @@
 [submodule "Gimu/ThirdParty/GLFW"]
 	path = Gimu/ThirdParty/GLFW
 	url = https://github.com/glfw/glfw.git
+[submodule "Gimu/ThirdParty/imgui"]
+	path = Gimu/ThirdParty/imgui
+	url = https://github.com/ocornut/imgui.git

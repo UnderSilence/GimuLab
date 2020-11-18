@@ -13,6 +13,7 @@ class Sandbox : public Gimu::Application {
 public:
     Sandbox() {
         AppendLayer(new ExampleLayout{});
+        AppendOverlay(new Gimu::ImGuiLayer{});
     };
     ~Sandbox() override = default;
 };

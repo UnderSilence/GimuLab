@@ -9,4 +9,7 @@
 
 #include "Gimu/Core/Base.h"
 
+#include "Gimu/Core/Application.h"
+#include "Gimu/ImGui/ImGuiLayer.h"
+
 #endif //GIMUDEV_GIMU_H

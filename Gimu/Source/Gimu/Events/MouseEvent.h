@@ -6,11 +6,10 @@
 #ifndef GIMU_MOUSEEVENT_H
 #define GIMU_MOUSEEVENT_H
 
+#include "Gimu/Core/MouseCodes.h"
 #include "Gimu/Events/Event.h"
 
 namespace Gimu {
-
-    typedef int MouseCode;
 
     class MouseMovedEvent : public Event {
     public:

@@ -9,7 +9,7 @@
 #include "Gimu/Events/Event.h"
 
 namespace Gimu {
-    /*Copy from Hazel Engine0*/
+    /*Copy from Hazel Engine*/
     class WindowResizeEvent : public Event {
     public:
         WindowResizeEvent(unsigned int width, unsigned int height)

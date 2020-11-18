@@ -30,7 +30,6 @@ namespace Gimu {
 
 }
 
-#include "Gimu/Core/Application.h"
 #include "Gimu/Core/Log.h"
 #include "Gimu/Core/Assert.h"
 

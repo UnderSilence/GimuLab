@@ -6,27 +6,9 @@
 #define GIMUDEV_LAYERSTACK_H
 
 #include "Gimu/Core/Base.h"
+#include "Gimu/Core/Layer.h"
 
 namespace Gimu {
-
-    class Layer {
-    public:
-        explicit Layer(std::string name = "DefaultLayer") :
-                m_DebugName(std::move(name)) {}
-
-        virtual ~Layer() = default;
-
-        virtual void OnAttach() {}
-        virtual void OnDetach() {}
-        virtual void OnUpdate() {}
-        virtual void OnEvent(Event &event) {}
-
-        const std::string &GetName() { return m_DebugName; }
-
-    protected:
-        std::string m_DebugName;
-    };
-
 
     class LayerList {
     public:
