@@ -9,8 +9,4 @@
 
 #include "Gimu/Core/Base.h"
 
-// Begin Entry Point
-#include "Gimu/Core/EntryPoint.h"
-// End Entry Point
-
 #endif //GIMUDEV_GIMU_H

@@ -5,11 +5,12 @@
 #include "gmpch.h"
 #include "Gimu/Core/Application.h"
 #include "Gimu/Core/Log.h"
-#include <GLFW/glfw3.h>
+
+#include <glad/glad.h>
 
 namespace Gimu {
 
-    Application* Application::s_Instance = nullptr;
+    Application *Application::s_Instance = nullptr;
 
     Application::Application() {
 
@@ -17,6 +18,10 @@ namespace Gimu {
         s_Instance = this;
         m_Window = Window::Create(WindowProps());
         m_Window->SetEventCallback(GM_BIND_EVENT_FN(OnEvent));
+
+        // Test OpenGL
+        unsigned int id = 0;
+        glGenVertexArrays(1, &id);
     }
 
     Application::~Application() {
@@ -28,16 +33,26 @@ namespace Gimu {
         EventDispatcher dispatcher(e);
         dispatcher.Dispatch<WindowCloseEvent>(GM_BIND_EVENT_FN(Application::OnWindowClose));
         dispatcher.Dispatch<WindowResizeEvent>(GM_BIND_EVENT_FN(Application::OnWindowResize));
-        GM_CORE_TRACE("{0}", e.ToString());
+        // GM_CORE_TRACE("{0}", e.ToString());
+
+        for (auto it = m_LayerList.rbegin(); it != m_LayerList.rend(); it++) {
+            if(e.Handled) break;
+            (*it)->OnEvent(e);
+        }
     }
 
     void Application::Run() {
-       // GM_TRACE(e.ToString());
-       // GM_WARN(e.ToString());
+        // GM_TRACE(e.ToString());
+        // GM_WARN(e.ToString());
 
         while (m_Running) {
             glClearColor(1, 0, 1, 1);
             glClear(GL_COLOR_BUFFER_BIT);
+
+            for (auto layer: m_LayerList) {
+                layer->OnUpdate();
+            }
+
             m_Window->OnUpdate();
         }
     }
@@ -48,6 +63,14 @@ namespace Gimu {
     bool Application::OnWindowResize(WindowResizeEvent &e) {
         GM_CORE_INFO(e.ToString());
         return true;
+    }
+
+    void Application::AppendLayer(Layer *layer) {
+        m_LayerList.AppendLayer(layer);
+    }
+
+    void Application::AppendOverlay(Layer *overlay) {
+        m_LayerList.AppendOverlay(overlay);
     }
 
 }

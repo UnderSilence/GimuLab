@@ -4,11 +4,16 @@
 
 #include <Gimu.h>
 #include <cstdio>
+#include <Gimu/Core/EntryPoint.h>
+#include "ExampleLayout.h"
 using namespace std;
+
 
 class Sandbox : public Gimu::Application {
 public:
-    Sandbox() = default;
+    Sandbox() {
+        AppendLayer(new ExampleLayout{});
+    };
     ~Sandbox() override = default;
 };
 

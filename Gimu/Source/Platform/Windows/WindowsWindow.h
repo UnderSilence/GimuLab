@@ -7,7 +7,8 @@
 #define GIMUDEV_WINDOWSWINDOW_H
 
 #include "Gimu/Core/Window.h"
-#include <GLFW/glfw3.h>
+
+struct GLFWwindow;
 
 namespace Gimu {
 

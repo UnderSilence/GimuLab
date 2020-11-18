@@ -7,6 +7,7 @@
 
 #include "Gimu/Core/Base.h"
 #include "Gimu/Core/Window.h"
+#include "Gimu/Core/LayerList.h"
 #include "Gimu/Events/Event.h"
 #include "Gimu/Events/AppEvent.h"
 
@@ -18,6 +19,9 @@ namespace Gimu {
         virtual ~Application();
         void Run();
 
+        void AppendLayer(Layer* layer);
+        void AppendOverlay(Layer* overlay);
+
         void OnEvent(Event& e);
     private:
         bool OnWindowClose(WindowCloseEvent& e);
@@ -25,6 +29,8 @@ namespace Gimu {
 
         std::unique_ptr<Window> m_Window;
         bool m_Running = true;
+        LayerList m_LayerList;
+
     private:
         static Application* s_Instance;
     };

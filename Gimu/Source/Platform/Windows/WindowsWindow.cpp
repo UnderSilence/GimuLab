@@ -2,11 +2,14 @@
 // Created by Metal on 2020/11/17.
 //
 
+
 #include "Platform/Windows/WindowsWindow.h"
 #include "Gimu/Events/AppEvent.h"
 #include "Gimu/Events/KeyEvent.h"
 #include "Gimu/Events/MouseEvent.h"
 
+#include <glad/glad.h>
+#include <GLFW/glfw3.h>
 
 namespace Gimu {
 
@@ -32,6 +35,9 @@ namespace Gimu {
 
         m_Window = glfwCreateWindow((int) props.Width, (int) props.Height, m_Data.Title.c_str(), nullptr, nullptr);
         glfwMakeContextCurrent(m_Window);
+        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+        GM_CORE_ASSERT(status, "Failed to initialize Glad!");
+
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
         ++s_GLFWWindowCount;
