@@ -8,6 +8,7 @@
 #include "Gimu/Core/Base.h"
 #include "Gimu/Core/Window.h"
 #include "Gimu/Core/LayerList.h"
+#include "Gimu/ImGui/ImGuiLayer.h"
 #include "Gimu/Events/Event.h"
 #include "Gimu/Events/AppEvent.h"
 
@@ -32,9 +33,10 @@ namespace Gimu {
         bool OnWindowResize(WindowResizeEvent& e);
 
         std::unique_ptr<Window> m_Window;
+        ImGuiLayer* m_ImGuiLayer;
         bool m_Running = true;
-        LayerList m_LayerList;
 
+        LayerList m_LayerList;
     private:
         static Application* s_Instance;
     };

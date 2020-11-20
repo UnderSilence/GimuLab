@@ -19,9 +19,8 @@ namespace Gimu {
         m_Window = Window::Create(WindowProps());
         m_Window->SetEventCallback(GM_BIND_EVENT_FN(OnEvent));
 
-        // Test OpenGL
-        unsigned int id = 0;
-        glGenVertexArrays(1, &id);
+        m_ImGuiLayer = new ImGuiLayer();
+        AppendOverlay(m_ImGuiLayer);
     }
 
     Application::~Application() {
@@ -53,7 +52,12 @@ namespace Gimu {
             for (auto layer: m_LayerList) {
                 layer->OnUpdate();
             }
-
+            m_ImGuiLayer->Begin();
+            {
+                for (Layer* layer : m_LayerList)
+                    layer->OnImGuiRender();
+            }
+            m_ImGuiLayer->End();
             m_Window->OnUpdate();
         }
     }
