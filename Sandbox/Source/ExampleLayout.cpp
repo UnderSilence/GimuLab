@@ -14,5 +14,5 @@ void ExampleLayout::OnUpdate() {
 
 void ExampleLayout::OnEvent(Gimu::Event &event) {
     Layer::OnEvent(event);
-    GM_TRACE("Catch event at {0}: {1}", m_DebugName, event.ToString());
+    // GM_TRACE("Catch event at {0}: {1}", m_DebugName, event.ToString());
 }

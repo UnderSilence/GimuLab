@@ -5,6 +5,7 @@ option(GLFW_INSTALL "Generate installation target" OFF)
 add_subdirectory(GLFW)
 add_subdirectory(spdlog)
 add_subdirectory(Glad)
+add_subdirectory(eigen)
 
 project(ImGui)
 

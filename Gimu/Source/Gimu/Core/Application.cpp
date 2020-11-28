@@ -5,6 +5,7 @@
 #include "gmpch.h"
 #include "Gimu/Core/Application.h"
 #include "Gimu/Core/Log.h"
+#include "Gimu/Core/Input.h"
 
 #include <glad/glad.h>
 
@@ -58,6 +59,9 @@ namespace Gimu {
                     layer->OnImGuiRender();
             }
             m_ImGuiLayer->End();
+
+            auto pos = Input::GetMousePosition();
+            GM_CORE_INFO("{0}, {1}", pos.x(), pos.y());
             m_Window->OnUpdate();
         }
     }

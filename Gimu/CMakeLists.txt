@@ -16,7 +16,8 @@ set(ThirdPartyIncludeDirs
         ThirdParty/spdlog/include
         ThirdParty/GLFW/include
         ThirdParty/Glad/include
-        ThirdParty/imgui)
+        ThirdParty/imgui
+        ThirdParty/eigen)
 
 include_directories(${ENGINE_API_INCLUDES} ${ThirdPartyIncludeDirs})
 
@@ -27,5 +28,5 @@ add_definitions(-DGIMU_BUILD_DLL)
 add_library(Gimu SHARED ${GIMU_CORE_SRCS} ${GIMU_EVENTS_SRCS} ${GIMU_IMGUI_SRCS} ${PLATFORM_WINDOWS_SRCS} ${PLATFORM_OPENGL_SRCS})
 target_precompile_headers(Gimu PUBLIC Source/gmpch.h)
 
-target_link_libraries(Gimu glfw spdlog glad ImGui ${OPENGL_LIBRARIES})
+target_link_libraries(Gimu glfw spdlog glad ImGui ${OPENGL_LIBRARIES} eigen)
 

@@ -7,3 +7,6 @@
 [submodule "Gimu/ThirdParty/imgui"]
 	path = Gimu/ThirdParty/imgui
 	url = https://github.com/ocornut/imgui.git
+[submodule "Gimu/ThirdParty/eigen"]
+	path = Gimu/ThirdParty/eigen
+	url = https://gitlab.com/libeigen/eigen.git
