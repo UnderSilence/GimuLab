@@ -1,6 +1,6 @@
 [submodule "Gimu/ThirdParty/spdlog"]
 	path = Gimu/ThirdParty/spdlog
-	url = https://github.com/gabime/spdlog
+	url = https://github.com/gabime/spdlog.git
 [submodule "Gimu/ThirdParty/GLFW"]
 	path = Gimu/ThirdParty/GLFW
 	url = https://github.com/glfw/glfw.git
