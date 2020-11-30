@@ -33,6 +33,8 @@
 
 # Clion IDEA files
 .idea/
+
+# cmake
 cmake-*/
 
 # Project outputs
@@ -42,3 +44,6 @@ build/
 
 # VSCODE
 .vscode/
+
+# visual studio
+.vs/

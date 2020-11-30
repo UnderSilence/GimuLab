@@ -14,6 +14,8 @@ public:
 
     void OnUpdate() override;
     void OnEvent(Gimu::Event& event) override;
+
+    void OnImGuiRender() override;
 };
 
 

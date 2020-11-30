@@ -19,8 +19,6 @@
 #include <map>
 #include <set>
 
-#include <Eigen/Dense>
-#include <Eigen/Eigen>
 #include "Gimu/Core/Log.h"
 
 #ifdef GIMU_PLATFORM_WINDOWS

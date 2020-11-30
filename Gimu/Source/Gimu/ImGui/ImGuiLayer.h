@@ -17,6 +17,9 @@ namespace Gimu {
         void OnEvent(Event &event) override;
 
         void Begin();
+
+        void OnImGuiRender() override;
+
         void End();
         void BlockEvents(bool block) { m_BlockEvents = block; }
 

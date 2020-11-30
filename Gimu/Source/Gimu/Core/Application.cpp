@@ -60,8 +60,8 @@ namespace Gimu {
             }
             m_ImGuiLayer->End();
 
-            auto pos = Input::GetMousePosition();
-            GM_CORE_INFO("{0}, {1}", pos.x(), pos.y());
+            // auto pos = Input::GetMousePosition();
+            // GM_CORE_INFO("{0}, {1}", pos.x(), pos.y());
             m_Window->OnUpdate();
         }
     }

@@ -3,6 +3,7 @@
 //
 
 #include "ExampleLayout.h"
+#include "imgui/imgui.h"
 
 ExampleLayout::ExampleLayout():Layer("Example") {
 }
@@ -15,4 +16,12 @@ void ExampleLayout::OnUpdate() {
 void ExampleLayout::OnEvent(Gimu::Event &event) {
     Layer::OnEvent(event);
     // GM_TRACE("Catch event at {0}: {1}", m_DebugName, event.ToString());
+}
+
+void ExampleLayout::OnImGuiRender() {
+    Layer::OnImGuiRender();
+
+    // ImGui::Begin("Example");
+    // ImGui::Text("Hello from GimuLab");
+    // ImGui::End();
 }
