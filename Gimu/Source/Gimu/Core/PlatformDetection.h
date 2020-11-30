@@ -7,9 +7,9 @@
 
 #ifdef GIMU_PLATFORM_WINDOWS
     #ifdef GIMU_BUILD_DLL
-        #define GIMU_API __declspec(dllexport)
+        #define GIMU_API
     #else
-        #define GIMU_API __declspec(dllimport)
+        #define GIMU_API
 #endif
 #else
     #error Hazel only support Windows currently!

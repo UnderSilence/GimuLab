@@ -56,7 +56,7 @@ namespace Gimu {
             m_ImGuiLayer->Begin();
             {
                 for (Layer* layer : m_LayerList)
-                    layer->OnImGuiRender();
+                     layer->OnImGuiRender();
             }
             m_ImGuiLayer->End();
 

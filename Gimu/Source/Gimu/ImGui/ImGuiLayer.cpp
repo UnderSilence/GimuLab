@@ -93,7 +93,5 @@ namespace Gimu {
     void ImGuiLayer::OnImGuiRender() {
         Layer::OnImGuiRender();
 
-        static bool show = true;
-        ImGui::ShowDemoWindow(&show);
     }
 }

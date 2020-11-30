@@ -17,6 +17,5 @@ set(IMGUI_BACKENDS_SRCS
         imgui/backends/imgui_impl_glfw.cpp
         imgui/backends/imgui_impl_opengl3.cpp
         )
-
 add_library(ImGui STATIC ${IMGUI_SRCS} ${IMGUI_BACKENDS_SRCS})
 target_link_libraries(ImGui glfw glad ${OPENGL_LIBRARIES})

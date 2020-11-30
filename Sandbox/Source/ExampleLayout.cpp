@@ -2,6 +2,8 @@
 // Created by Metal on 2020/11/18.
 //
 
+#include <GLFW/glfw3.h>
+
 #include "ExampleLayout.h"
 #include "imgui/imgui.h"
 
@@ -21,7 +23,10 @@ void ExampleLayout::OnEvent(Gimu::Event &event) {
 void ExampleLayout::OnImGuiRender() {
     Layer::OnImGuiRender();
 
-    // ImGui::Begin("Example");
-    // ImGui::Text("Hello from GimuLab");
-    // ImGui::End();
+    static bool show = true;
+    ImGui::ShowDemoWindow(&show);
+
+    ImGui::Begin("Example");
+    ImGui::Text("Hello from GimuLab!");
+    ImGui::End();
 }
